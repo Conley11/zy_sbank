@@ -18,12 +18,11 @@ import com.jfinal.kit.PropKit;
 import com.jfinal.template.Engine;
 import com.jfinal.weixin.sdk.api.ApiConfig;
 import com.jfinal.weixin.sdk.api.ApiConfigKit;
-import com.jfinal.wxaapp.WxaConfig;
-import com.jfinal.wxaapp.WxaConfigKit;
 
 public class WeixinConfig extends JFinalConfig {
     // 本地开发模式
-    private boolean isLocalDev = false;
+    @SuppressWarnings("unused")
+	private boolean isLocalDev = false;
     
     /**
      * 如果生产环境配置文件存在，则优先加载该配置，否则加载开发环境配置文件
@@ -49,10 +48,8 @@ public class WeixinConfig extends JFinalConfig {
     }
 
     public void configRoute(Routes me) {
-        me.add("/msg", WeixinMsgController.class);
         me.add("/api", WeixinApiController.class, "/api");
         me.add("/pay", WeixinPayController.class);
-        me.add("/wxa/user", WxaUserApiController.class);
         me.add("/subscribemsg", SubscribeMsgController.class);
     }
 
@@ -123,10 +120,10 @@ public class WeixinConfig extends JFinalConfig {
 //            String onLineTokenUrl = "http://localhost/weixin/api/getToken";
 //            ApiConfigKit.setAccessTokenCache(new LocalTestTokenCache(onLineTokenUrl));
 //        }
-        WxaConfig wc = new WxaConfig();
+       /* WxaConfig wc = new WxaConfig();
         wc.setAppId("wx4f53594f9a6b3dcb");
         wc.setAppSecret("eec6482ba3804df05bd10895bace0579");
-        WxaConfigKit.setWxaConfig(wc);
+        WxaConfigKit.setWxaConfig(wc);*/
     }
 
     public static void main(String[] args) {

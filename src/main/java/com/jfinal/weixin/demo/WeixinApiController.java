@@ -92,8 +92,8 @@ public class WeixinApiController extends ApiController {
     public void sendMsg()
     {
         String str = " {\n" +
-                "           \"touser\":\"ohbweuNYB_heu_buiBWZtwgi4xzU\",\n" +
-                "           \"template_id\":\"9SIa8ph1403NEM3qk3z9-go-p4kBMeh-HGepQZVdA7w\",\n" +
+                "           \"touser\":\"oG9Qrw8YqnueBlHkCi3d0cVJ51UQ\",\n" +
+                "           \"template_id\":\"1uV5An9fxdk19qKs4Oi3M_-NqkPEJ-iXn-jkRLCCQ0k\",\n" +
                 "           \"url\":\"http://www.sina.com\",\n" +
                 "           \"topcolor\":\"#FF0000\",\n" +
                 "           \"data\":{\n" +
@@ -107,6 +107,10 @@ public class WeixinApiController extends ApiController {
                 "                   },\n" +
                 "                   \"keyword2\":{\n" +
                 "                       \"value\":\"1元\",\n" +
+                "                       \"color\":\"#173177\"\n" +
+                "                   },\n" +
+                "                   \"keyword3\":{\n" +
+                "                       \"value\":\"2元\",\n" +
                 "                       \"color\":\"#173177\"\n" +
                 "                   },\n" +
                 "                   \"remark\":{\n" +

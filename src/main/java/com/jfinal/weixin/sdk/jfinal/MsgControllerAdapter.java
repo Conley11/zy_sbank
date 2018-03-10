@@ -6,8 +6,6 @@
 
 package com.jfinal.weixin.sdk.jfinal;
 
-import com.jfinal.weixin.iot.msg.InEquDataMsg;
-import com.jfinal.weixin.iot.msg.InEqubindEvent;
 import com.jfinal.weixin.sdk.msg.in.InImageMsg;
 import com.jfinal.weixin.sdk.msg.in.InLinkMsg;
 import com.jfinal.weixin.sdk.msg.in.InLocationMsg;
@@ -226,23 +224,6 @@ public abstract class MsgControllerAdapter extends MsgController {
         renderDefault();
     }
 
-    /**
-     * 处理微信硬件绑定和解绑事件
-     * @param msg 处理微信硬件绑定和解绑事件
-     */
-    @Override
-    protected  void processInEqubindEvent(InEqubindEvent msg) {
-        renderDefault();
-    }
-    
-    /**
-     * 处理微信硬件发来数据
-     * @param msg 处理微信硬件发来数据
-     */
-    @Override
-    protected  void processInEquDataMsg(InEquDataMsg msg) {
-        renderDefault();
-    }
     
     /**
      * 方便没有使用的api返回“”避免出现，该公众号暂时不能提供服务

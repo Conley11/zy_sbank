@@ -12,8 +12,6 @@ import com.jfinal.ext.interceptor.NotAction;
 import com.jfinal.kit.HttpKit;
 import com.jfinal.kit.StrKit;
 import com.jfinal.log.Log;
-import com.jfinal.weixin.iot.msg.InEquDataMsg;
-import com.jfinal.weixin.iot.msg.InEqubindEvent;
 import com.jfinal.weixin.sdk.api.ApiConfigKit;
 import com.jfinal.weixin.sdk.kit.MsgEncryptKit;
 import com.jfinal.weixin.sdk.msg.InMsgParser;
@@ -58,7 +56,7 @@ import com.jfinal.weixin.sdk.msg.out.OutTextMsg;
  */
 public abstract class MsgController extends Controller {
 
-    private static final Log log = Log.getLog(MsgController.class);
+//    private static final Log log = Log.getLog(MsgController.class);
     private String inMsgXml = null;        // 本次请求 xml数据
     private InMsg inMsg = null;            // 本次请求 xml 解析后的 InMsg 对象
 
@@ -136,19 +134,6 @@ public abstract class MsgController extends Controller {
             processInUserGetCardEvent((InUserGetCardEvent) msg);
         else if (msg instanceof InUserGiftingCardEvent)
             processInUserGiftingCardEvent((InUserGiftingCardEvent) msg);
-        //===================微信智能硬件========================//
-        else if (msg instanceof InEqubindEvent)
-            processInEqubindEvent((InEqubindEvent) msg);
-        else if (msg instanceof InEquDataMsg)
-            processInEquDataMsg((InEquDataMsg) msg);
-        //===================微信智能硬件========================//
-        else if (msg instanceof InNotDefinedEvent) {
-            log.error("未能识别的事件类型。 消息 xml 内容为：\n" + getInMsgXml());
-            processIsNotDefinedEvent((InNotDefinedEvent) msg);
-        } else if (msg instanceof InNotDefinedMsg) {
-            log.error("未能识别的消息类型。 消息 xml 内容为：\n" + getInMsgXml());
-            processIsNotDefinedMsg((InNotDefinedMsg) msg);
-        }
     }
 
     /**
@@ -402,17 +387,6 @@ public abstract class MsgController extends Controller {
      */
     protected abstract void processInCardPassCheckEvent(InCardPassCheckEvent msg);
     
-    /**
-     * 处理微信硬件绑定和解绑事件
-     * @param msg 处理微信硬件绑定和解绑事件
-     */    
-    protected abstract void processInEqubindEvent(InEqubindEvent msg) ;
-    
-    /**
-     * 处理微信硬件发来数据
-     * @param msg 处理微信硬件发来数据
-     */
-    protected abstract void processInEquDataMsg(InEquDataMsg msg);
 }
 
 

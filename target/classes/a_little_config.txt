@@ -9,8 +9,8 @@ token=__my__token__
 # 测试用的账号
 #appId=wx9803d1188fa5fbda
 #appSecret=db859c968763c582794e7c3d003c3d87
-appId=wxff7cef7c72dd7692
-appSecret=311364b08ca99c94a937c7537c927d53
+appId=wxfc3aa2529bea2ed3
+appSecret=6a096d089f911d6ebff0736e6337eba8
 
 #是否对消息进行加密，是否对消息进行加密，对应于微信平台的消息加解密方式，false支持明文模式及兼容模式，true支持安全模式及兼容模式
 #encryptMessage=true
