@@ -139,7 +139,12 @@
 		<version>2.4</version> 
 	</dependency>
     
-  </dependencies>
+    <dependency>
+		    <groupId>com.thetransactioncompany</groupId>
+		    <artifactId>cors-filter</artifactId>
+		    <version>1.7.1</version>
+		</dependency>
+  	</dependencies>
 
   <build>
     <finalName>jfinal-weixin</finalName>
